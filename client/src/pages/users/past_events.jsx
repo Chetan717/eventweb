@@ -66,7 +66,7 @@ function UserDashboard() {
             <div className="flex m-auto">
                 <div className="flex mx-auto container ">
                     <div className="flex m-auto gap-4 lg:gap-8  overflow-y-hidden w-full h-[calc(88vh)]">
-                        {/* Render the regular filter for medium screens and above */}
+                        {/* Render the regular filter for medium screens and above 
                         <div className="hidden md:flex flex-col p-4 sticky top-0 w-1/6 md:w-1/4">
                             <Dashboard_Filter
                                 filterOptions={filterOptions}
@@ -74,7 +74,7 @@ function UserDashboard() {
                                 handleFilterApply={handleFilterApply}
                             />
                         </div>
-                        {/* Render the popup filter for small screens */}
+                        Render the popup filter for small screens */}
                         {popupFilterOpen && (
                             <div className="md:hidden fixed inset-0 z-10 bg-black bg-opacity-50 flex items-center justify-center">
                                 <div className="bg-white rounded-lg p-4 w-5/6">

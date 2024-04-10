@@ -54,7 +54,7 @@ const payment = async (req, res) => {
             }
         );
 
-        console.log("Charge: ", { charge });
+        // console.log("Charge: ", { charge });
         status = "success";
     } catch (error) {
         console.log(error);
