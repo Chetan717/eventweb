@@ -11,7 +11,7 @@ const { sendSMS } = require("./smsController");
 
 const jwt = require("jsonwebtoken");
 const JWT_SECRET = process.env.JWT_SECRET;
-console.log("in auth - ", JWT_SECRET);
+// ("in auth - ", JWT_SECRET);
 
 const cookieParser = require("cookie-parser");
 app.use(cookieParser());
@@ -26,13 +26,13 @@ const signIn = async (req, res) => {
             try {
                 await OtpAuth.deleteMany({ email: Email }, function (err) {
                     if (err) {
-                        console.log(err);
+                        // ;
                     } else {
-                        console.log("Users deleted successfully");
+                        // ("Users deleted successfully");
                     }
                 });
             } catch (e) {
-                console.log(e);
+                // (e);
             }
 
             // generate otp for new user
@@ -50,7 +50,7 @@ const signIn = async (req, res) => {
 
             sendSMS(Email, otp.otp);
 
-            console.log("Generated otp for signin: ", otp);
+            // ("Generated otp for signin: ", otp);
             //encrypting the otp and then saving to Otp_table
             const salt = await bcrypt.genSalt(10);
             otp.otp = await bcrypt.hash(otp.otp, salt);
@@ -61,9 +61,9 @@ const signIn = async (req, res) => {
             });
 
             newUserLogin.save((error, success) => {
-                if (error) console.log(error);
-                else
-                    console.log("Saved::otp-temporarily::ready for validation");
+                // if (error) (error);
+                // else
+                //     ("Saved::otp-temporarily::ready for validation");
             });
 
             return res.status(200).send({ msg: "Otp sent successfully!" });
@@ -91,13 +91,13 @@ const signUp = async (req, res) => {
             try {
                 await OtpAuth.deleteMany({ email: Email }, function (err) {
                     if (err) {
-                        console.log(err);
+                        // ;
                     } else {
-                        console.log("Users deleted successfully");
+                        // ("Users deleted successfully");
                     }
                 });
             } catch (e) {
-                console.log(e);
+                // (e);
             }
 
             // generate otp for new user
@@ -112,7 +112,7 @@ const signUp = async (req, res) => {
                 email: Email,
                 otp: OTP,
             };
-            console.log("Before hashing: ", otp);
+            // ("Before hashing: ", otp);
 
             sendSMS(Email, otp.otp);
 
@@ -126,8 +126,8 @@ const signUp = async (req, res) => {
             });
 
             newUserLogin.save((error, success) => {
-                if (error) console.log(error);
-                else console.log("Saved::otp::ready for validation");
+                // if (error) (error);
+                // else ("Saved::otp::ready for validation");
             });
 
             return res.status(200).send({ msg: "Otp sent successfully!" });
@@ -152,7 +152,7 @@ const verifyLogin = async (req, res) => {
 
             if (Email === docs[0].email && validUser) {
                 User.find({ email: Email }, async function (err, user) {
-                    console.log(user);
+                    // (user);
                     res.status(200).send({
                         msg: "Sign-In successful!",
                         user_id: user[0].user_token,
@@ -200,15 +200,15 @@ const verifyOtp = async (req, res) => {
                 });
 
                 newUser.save((error, success) => {
-                    if (error) console.log(error);
-                    else console.log("Signup successful: ", newUser);
+                    // if (error) (error);
+                    // else ("Signup successful: ", newUser);
                 });
 
                 OtpAuth.deleteMany({ email: Email }, async function (err) {
                     if (err) {
-                        console.log(err);
+                        // ;
                     } else {
-                        console.log(`OTP table for ${Email} cleared.`);
+                        // (`OTP table for ${Email} cleared.`);
                     }
                 });
 

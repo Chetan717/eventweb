@@ -42,9 +42,9 @@ Admin.find(
     async function (err, docs) {
         if (docs.length === 0) {
             test_credential.save((error, success) => {
-                if (error) console.log(error);
+                if (error) (error);
                 else
-                    console.log(
+                    (
                         "Saved::Admin::test credentials",
                         test_credential
                     );

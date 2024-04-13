@@ -54,16 +54,16 @@ const payment = async (req, res) => {
             }
         );
 
-        // console.log("Charge: ", { charge });
+        // ("Charge: ", { charge });
         status = "success";
     } catch (error) {
-        console.log(error);
+        (error);
         status = "success";
     }
 
     // collecting ticket details
     User.find({ user_token: user.user_id }, async function (err, docs) {
-        console.log(docs);
+        (docs);
         if (docs.length !== 0) {
             var Details = {
                 email: docs[0].email,
@@ -76,7 +76,7 @@ const payment = async (req, res) => {
                 zip: token.shipping_address_zip,
             };
 
-            console.log("All details before email: ", Details);
+            ("All details before email: ", Details);
 
             try {
                 Event.findOne(
@@ -87,7 +87,7 @@ const payment = async (req, res) => {
                     function (err, doc) {
                         if (err) return handleError(err);
                         if (doc) {
-                            console.log("Element already exists in array");
+                            ("Element already exists in array");
                             check = "alreadyregistered";
                         } else {
                             Event.updateOne(
@@ -106,7 +106,7 @@ const payment = async (req, res) => {
                                 },
                                 function (err) {
                                     if (err) {
-                                        console.log(err);
+                                ;
                                     }
                                 }
                             );
@@ -114,7 +114,7 @@ const payment = async (req, res) => {
                     }
                 );
             } catch (err) {
-                console.log(err);
+        ;
             }
             if (check !== "alreadyregistered") {
                 sendTicket(Details);
@@ -133,7 +133,7 @@ const payment = async (req, res) => {
                 { $push: { registeredEvents: events[0] } },
                 function (err) {
                     if (err) {
-                        console.log(err);
+                ;
                     }
                 }
             );

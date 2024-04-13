@@ -16,7 +16,6 @@ const eventRouter = require("./routes/eventRoutes");
 // const checkInRouter = require("./routes/checkInRoutes")
 
 dotenv.config();
-console.log("in index - ", process.env.MONGO_ATLAS_URI);
 //database url
 mongoose
     .connect(process.env.MONGO_ATLAS_URI, {
@@ -25,7 +24,6 @@ mongoose
     })
     .then(() => {})
     .catch((err) => {
-        console.log(err);
     });
 
 require("./models/otpAuth");
@@ -51,5 +49,4 @@ app.get("/", (req, res) => {
 });
 
 app.listen(process.env.PORT || 6000, () => {
-    console.log(`Server Running on🚀: ${process.env.PORT}`);
 });

@@ -20,8 +20,9 @@ const setAdmin = async (req, res) => {
     });
 
     await new_admin.save((error, success) => {
-        if (error) console.log(error);
-        else console.log("Saved::New Admin::credentials.");
+        // if (error) (error);
+        // else
+        //  ("Saved::New Admin::credentials.");
     });
 
     res.status(200).send({ msg: "Credentials Added" });
@@ -50,7 +51,7 @@ const adminDetails = async (req, res) => {
 
     Admin.find({ admin_id: admin_token }, async function (err, docs) {
         if (err) {
-            console.log(err);
+            // ;
             res.status(400).send({ msg: "No such admin exists" });
         } else {
             res.status(200).send(docs[0]);

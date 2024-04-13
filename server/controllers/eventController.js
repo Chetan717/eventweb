@@ -42,9 +42,9 @@ function sendCheckInMail(data) {
 
     transporter.sendMail(mailOptions, function (err, success) {
         if (err) {
-            console.log(err);
+            // ;
         } else {
-            console.log("Checked In Email sent successfully");
+            // ("Checked In Email sent successfully");
         }
     });
 }
@@ -62,7 +62,7 @@ const postEvent = async (req, res) => {
     const Organizer = req.body.organizer;
 
     const adminId = req.body.admin_id;
-    console.log("Admin mil gaya: ", adminId);
+    // ("Admin mil gaya: ", adminId);
 
     const secret = JWT_SECRET;
     const payload = {
@@ -87,11 +87,11 @@ const postEvent = async (req, res) => {
 
     try {
         new_event.save((error, success) => {
-            if (error) console.log(error);
-            else console.log("Saved::New Event::created.");
+            // if (error) (error);
+            // else ("Saved::New Event::created.");
         });
     } catch (err) {
-        console.log(err);
+;
     }
 
     Admin.updateOne(
@@ -121,7 +121,7 @@ const postEvent = async (req, res) => {
         },
         function (err) {
             if (err) {
-                console.log(err);
+        ;
             }
         }
     );
@@ -157,7 +157,7 @@ const deleteEvent = async (req, res) => {
     Event.deleteOne({ event_id: eventId }, function (err) {
         if (err) return handleError(err);
         else {
-            console.log("Event deleted::events collection.");
+            // ("Event deleted::events collection.");
         }
     });
 
@@ -167,7 +167,7 @@ const deleteEvent = async (req, res) => {
         function (err) {
             if (err) return handleError(err);
             else {
-                console.log("Event deleted::admin collection.");
+                ("Event deleted::admin collection.");
             }
         }
     );
@@ -183,7 +183,7 @@ const checkin = async (req, res) => {
     Event.find({ event_id: eventId })
         .then((data) => {
             eventName = data[0].name;
-            console.log(eventName);
+            (eventName);
         })
         .catch((err) => {
             res.status(400).send({ msg: "Error fetching event", error: err });
@@ -196,7 +196,7 @@ const checkin = async (req, res) => {
             function (err) {
                 if (err) return handleError(err);
                 else {
-                    console.log(`user :: checked-in`);
+                    (`user :: checked-in`);
                 }
             }
         );
@@ -216,7 +216,7 @@ const checkin = async (req, res) => {
                 sendCheckInMail(data_obj);
             })
             .catch((err) => {
-                // console.log({ msg: "Error fetching event", error: err });
+                // ({ msg: "Error fetching event", error: err });
             });
     }
 

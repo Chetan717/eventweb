@@ -3,7 +3,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 async function sendSMS(Email, otp) {
-  console.log(process.env.NODE_MAILER_USER, "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+  (process.env.NODE_MAILER_USER, "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu");
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
