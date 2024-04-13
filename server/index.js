@@ -14,18 +14,22 @@ const paymentRouter = require("./routes/paymentRoute");
 const adminRouter = require("./routes/adminRoutes");
 const eventRouter = require("./routes/eventRoutes");
 // const checkInRouter = require("./routes/checkInRoutes")
-app.use(cors("https://main.d16wtacuzhrcqv.amplifyapp.com"));
-
 dotenv.config();
 //database url
+
+app.use(
+  cors({
+    origin: ["https://main.d16wtacuzhrcqv.amplifyapp.com"], // Change this to your frontend's URL
+    optionsSuccessStatus: 200,
+  })
+);
 mongoose
-    .connect(process.env.MONGO_ATLAS_URI, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-    })
-    .then(() => {})
-    .catch((err) => {
-    });
+  .connect(process.env.MONGO_ATLAS_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {})
+  .catch((err) => {});
 
 require("./models/otpAuth");
 require("./models/user");
@@ -45,8 +49,7 @@ app.use("/", adminRouter);
 app.use("/", eventRouter);
 
 app.get("/", (req, res) => {
-    res.send("Event Management micro services API.");
+  res.send("Event Management micro services API.");
 });
 
-app.listen(process.env.PORT || 6000, () => {
-});
+app.listen(process.env.PORT || 6000, () => {});
