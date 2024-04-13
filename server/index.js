@@ -50,6 +50,6 @@ app.get("/", (req, res) => {
     res.send("Event Management micro services API.");
 });
 
-app.listen(process.env.PORT || 5000, () => {
+app.listen(process.env.PORT || 6000, () => {
     console.log(`Server Running on🚀: ${process.env.PORT}`);
 });
