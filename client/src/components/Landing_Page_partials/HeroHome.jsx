@@ -1,6 +1,9 @@
+import gau from "./../../../public/img/gau.gif"
+
 function HeroHome() {
     return (
-        <section className="">
+        // https://static.vecteezy.com/system/resources/previews/007/407/980/mp4/the-crowd-at-the-concert-and-blurred-stage-lights-of-people-dancing-at-the-rock-n-roll-concert-free-video.mp4
+        <section className="bg-cover bg-center" style={{backgroundImage: 'url(\'https://res.cloudinary.com/dutpoqbev/image/upload/v1712986278/7722295-uhd_3840_2160_25fps-ezgif.com-video-to-gif-converter_1_swn9la.gif\')'}}>
             <br />
             <br />
             <br />
@@ -20,6 +23,7 @@ function HeroHome() {
                                 {"Event Management"}
                             </p>
                         </h1>
+                        
                         <p className="text-2xl text-gray-500 mb-8">
                             "Bringing Your Events to Life: Simplified Registration, Seamless Management, and Easy Ticketing."
                         </p>

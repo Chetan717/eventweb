@@ -1,17 +1,17 @@
 const Images = [
     {
         id: 0,
-        src: "/img/landing_page_images/features-01.png",
+        src: "https://static.vecteezy.com/system/resources/thumbnails/027/102/579/small/audience-raising-hands-enjoying-live-music-festival-concert-rock-band-performing-on-outdoor-stage-in-spotlight-photo.jpg",
         title: "feature1",
     },
     {
         id: 1,
-        src: "/img/landing_page_images/features-02.png",
+        src: "https://www.hollerings.com/wp-content/uploads/2019/07/sk-1024x621.jpg",
         title: "feature2",
     },
     {
         id: 2,
-        src: "/img/landing_page_images/features-03.png",
+        src: "/img/admin.png",
         title: "feature3",
     },
     {

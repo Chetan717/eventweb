@@ -81,9 +81,10 @@ function Popup_Filter({
                         className="filterInput"
                     >
                         <option value="">Select a category...</option>
-                        <option value="category1">Category 1</option>
-                        <option value="category2">Category 2</option>
-                        <option value="category3">Category 3</option>
+                        <option value={`Technical`}>Technical</option>
+                <option value={`Standup`}>Standup</option>
+                <option value={`Music`}>Music</option>
+                <option value={`Cultural`}>Cultural</option>
                     </select>
                 </div>
                 {/* Input field to filter through a date range */}

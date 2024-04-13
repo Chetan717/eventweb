@@ -54,6 +54,7 @@ const postEvent = async (req, res) => {
     const Venue = req.body.venue;
     const Date = req.body.date;
     const Time = req.body.time;
+    const Type = req.body.Type;
     const Desc = req.body.description;
     const Price = req.body.price;
     const Profile = req.body.profile;
@@ -75,6 +76,7 @@ const postEvent = async (req, res) => {
         name: Name,
         venue: Venue,
         date: Date,
+        Type:Type,
         time: Time,
         description: Desc,
         price: Price,
@@ -101,6 +103,7 @@ const postEvent = async (req, res) => {
                     name: Name,
                     venue: Venue,
                     date: Date,
+                    Type:Type,
                     time: Time,
                     description: Desc,
                     price: Price,
