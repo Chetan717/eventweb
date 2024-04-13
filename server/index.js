@@ -37,7 +37,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cookieParser());
-app.use(cors());
+app.use(cors("https://main.d16wtacuzhrcqv.amplifyapp.com"));
 
 app.use("/", paymentRouter);
 app.use("/user", userRouter);
