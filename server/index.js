@@ -14,6 +14,7 @@ const paymentRouter = require("./routes/paymentRoute");
 const adminRouter = require("./routes/adminRoutes");
 const eventRouter = require("./routes/eventRoutes");
 // const checkInRouter = require("./routes/checkInRoutes")
+app.use(cors("https://main.d16wtacuzhrcqv.amplifyapp.com"));
 
 dotenv.config();
 //database url
@@ -35,7 +36,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 app.use(cookieParser());
-app.use(cors("https://main.d16wtacuzhrcqv.amplifyapp.com"));
 
 app.use("/", paymentRouter);
 app.use("/user", userRouter);
