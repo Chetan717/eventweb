@@ -1,28 +1,17 @@
 const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
-
 const cors = require("cors");
-
 const dotenv = require("dotenv");
 const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
-
 const userRouter = require("./routes/authRoutes");
 const dashboardRouter = require("./routes/userDashboardRoutes");
 const paymentRouter = require("./routes/paymentRoute");
 const adminRouter = require("./routes/adminRoutes");
 const eventRouter = require("./routes/eventRoutes");
-// const checkInRouter = require("./routes/checkInRoutes")
 dotenv.config();
-//database url
-
-app.use(
-  cors({
-    origin: ["https://main.d16wtacuzhrcqv.amplifyapp.com"], // Change this to your frontend's URL
-    optionsSuccessStatus: 200,
-  })
-);
+app.use(cors("http://localhost:3000"));
 mongoose
   .connect(process.env.MONGO_ATLAS_URI, {
     useNewUrlParser: true,

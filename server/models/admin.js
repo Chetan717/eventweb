@@ -54,3 +54,4 @@ Admin.find(
 );
 
 module.exports = Admin;
+
